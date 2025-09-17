@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from "node:url";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/https://github.com/gvnrxd/gvnrxd-web-vite-starter-t3/",
+  base: "/gvnrxd-web-vite-starter-t3/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

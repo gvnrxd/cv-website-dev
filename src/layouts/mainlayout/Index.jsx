@@ -1,10 +1,15 @@
+import { Outlet } from "react-router-dom";
+import Header from "@shared/components/header/Index";
 import styles from "./Index.module.css";
 
-export default function LandingLayout() {
+export default function MainLayout() {
   return (
     <>
       <Header />
-      <h1>This is the Main Layout</h1>
+      <main>
+        <Outlet />
+        <h2>This is the Main layout</h2>
+      </main>
     </>
   );
 }

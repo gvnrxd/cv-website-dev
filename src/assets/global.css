@@ -4,23 +4,25 @@
   --verdigris: #70a9a1; /* highlight Secondary background, cards, highlights Nice for cards, callouts, or testimonial backgrounds. Adds a soft but noticeable contrast. */
   --cambridge-blue: #9ec1a3; /*  balance Section backgrounds, testimonial boxes Great as a section background to break up the page. It balances text readability and calmness. */
   --tea-green: #cfe0c3; /*breathing room Light background, soft dividers, whitespace Perfect for light background areas, whitespace alternatives, and soft dividers between sections. Keeps things airy. */
+  --mint-green: #e0e9e8;
   --white: #ffffff;
   --black: #000000;
 
   /* Radius scale */
-  --radius-sm: 4px; /* subtle rounding */
-  --radius-md: 8px; /* default rounding */
-  --radius-lg: 16px; /* bigger surfaces */
-  --radius-full: 9999px; /* fully rounded (pill/circle) */
+  --radius-sm: clamp(3px, 0.5vw, 4px); /* chips, small inputs */
+  --radius-md: clamp(6px, 1vw, 8px); /* buttons, cards */
+  --radius-lg: clamp(12px, 2vw, 16px); /* modals, large cards */
+  --radius-xl: clamp(18px, 3vw, 24px); /* hero cards, sheets */
+  --radius-full: 9999px; /* pills/circles */
 
   /* spacing scale */
-  --space-xxs: 0.25rem; /* 4px */
-  --space-xs: 0.5rem; /* 8px */
-  --space-sm: 0.75rem; /* 12px */
-  --space-md: 1rem; /* 16px */
-  --space-lg: 1.5rem; /* 24px */
-  --space-xl: 2rem; /* 32px */
-  --space-2xl: 3rem; /* 48px */
+  --space-xxs: clamp(0.25rem, 0.2rem + 0.2vw, 0.375rem); /* 4px → 6px */
+  --space-xs: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem); /* 8px → 12px */
+  --space-sm: clamp(0.75rem, 0.6rem + 0.3vw, 1rem); /* 12px → 16px */
+  --space-md: clamp(1rem, 0.9rem + 0.4vw, 1.25rem); /* 16px → 20px */
+  --space-lg: clamp(1.5rem, 1.3rem + 0.6vw, 2rem); /* 24px → 32px */
+  --space-xl: clamp(2rem, 1.8rem + 0.8vw, 2.5rem); /* 32px → 40px */
+  --space-2xl: clamp(3rem, 2.5rem + 1vw, 3.5rem); /* 48px → 56px */
 
   /* text scale */
   --step--2: clamp(0.7813rem, 0.775rem + 0.0278vw, 0.8rem);
@@ -39,8 +41,8 @@
 :root,
 :root[data-theme="light"] {
   /* core */
-  --bg: var(--white);
-  --surface: var(--tea);
+  --bg: var(--mint-green);
+  --surface: var(--tea-green);
   --card: var(--cambridge);
   --text: var(--gunmetal);
   --muted-text: #334247; /* gunmetal ~20% lighter */
@@ -59,15 +61,35 @@
   --bg: var(--gunmetal);
   --surface: #2a4a53; /* gunmetal +10% lightness */
   --card: #355e69; /* between gunmetal/cerulean */
-  --text: var(--tea);
+  --text: var(--tea-green);
   --muted-text: #b6c9bb;
   --border: var(--cerulean);
   /* interactive */
-  --link: var(--cambridge);
+  --link: var(--cambridge-blue);
   --link-hover: var(--verdigris);
-  --btn-bg: var(--cambridge);
+  --btn-bg: var(--cambridge-blue);
   --btn-text: var(--gunmetal);
   --btn-hover-bg: var(--verdigris);
+}
+
+/* ==== Fonts ==== */
+@font-face {
+  font-family: "Inter";
+  src: url(/fonts/Inter-VariableFont_opsz,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/fonts/Inter-VariableFont_opsz,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url(/fonts/PlayfairDisplay-VariableFont_wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,4 +149,9 @@ a:hover {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+nav {
+  background-color: var(--surface);
 }

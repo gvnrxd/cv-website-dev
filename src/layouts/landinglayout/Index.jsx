@@ -1,11 +1,15 @@
-import styles from "./Index.module.css";
+import { Outlet } from "react-router-dom";
 import Header from "@shared/components/header/Index";
+import styles from "./Index.module.css";
 
 export default function LandingLayout() {
   return (
     <>
       <Header />
-      <h1>This is the Landing Layout</h1>
+      <main>
+        <Outlet />
+        <h2>This is the Landing layout</h2>
+      </main>
     </>
   );
 }

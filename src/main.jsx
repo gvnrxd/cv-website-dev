@@ -7,7 +7,7 @@ import "./assets/global.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/gvnrxd-web-vite-starter-t3">
+    <BrowserRouter basename="/cv-website-dev">
       <App />
     </BrowserRouter>
   </StrictMode>

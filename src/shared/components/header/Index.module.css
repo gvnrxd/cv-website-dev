@@ -1,16 +1,20 @@
 .header {
-  --header-color: #0f172a;
-  --header-text-color: #f1f5f9;
-  --header-hover-color: #38bdf8;
-}
-
-.header {
-  background-color: var(--header-color);
-  color: var(--header-text-color);
+  background-color: var(--gunmetal);
+  color: var(--cerulean);
   text-align: center;
   padding: var(--space-md);
+  font-size: var(--step-0);
 }
 
-.header > * {
-  margin-bottom: 0.5rem;
+.navBar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.navBar a {
+  text-decoration: none;
+}
+
+.logoLink {
+  font-size: var(--step-3);
 }

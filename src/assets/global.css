@@ -1,17 +1,11 @@
 :root {
-  /* Light theme */
-  --background-color: #ffffff;
-  --text-color: #0f172a;
-
-  /* Color Pallette */
-  --primary-color: #ffffff;
-  --secondary-color: #000000;
-
-  /* Links / borders (light defaults) */
-  --border-color: #e2e8f0;
-  --border-color-strong: #cbd5e1;
-  --link-color: #2563eb;
-  --link-hover-color: #3b82f6;
+  --gunmetal: #1f363d; /* foundation Strong base: text, headings, nav, footer Use for text, headings, nav bar, footer background, strong CTA buttons. It’s your anchor color. */
+  --cerulean: #40798c; /* action Accent: links, buttons, hover states  Works well for links, hover states, secondary buttons, and accents. It draws attention without being harsh. */
+  --verdigris: #70a9a1; /* highlight Secondary background, cards, highlights Nice for cards, callouts, or testimonial backgrounds. Adds a soft but noticeable contrast. */
+  --cambridge-blue: #9ec1a3; /*  balance Section backgrounds, testimonial boxes Great as a section background to break up the page. It balances text readability and calmness. */
+  --tea-green: #cfe0c3; /*breathing room Light background, soft dividers, whitespace Perfect for light background areas, whitespace alternatives, and soft dividers between sections. Keeps things airy. */
+  --white: #ffffff;
+  --black: #000000;
 
   /* Radius scale */
   --radius-sm: 4px; /* subtle rounding */
@@ -29,49 +23,108 @@
   --space-2xl: 3rem; /* 48px */
 
   /* text scale */
-  --text-3xs: 0.25rem; /* 8px */
-  --text-xxs: 0.625rem; /* 10px */
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-md: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 1.875rem; /* 30px */
-  --text-4xl: 2.25rem; /* 36px */
+  --step--2: clamp(0.7813rem, 0.775rem + 0.0278vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9167rem + 0.0926vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0833rem + 0.1852vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2792rem + 0.3148vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.509rem + 0.4935vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.7782rem + 0.7369vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0931rem + 1.0651vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4609rem + 1.5042vw, 3.8147rem);
+  --step-6: clamp(3.3592rem, 2.8895rem + 2.0876vw, 4.7684rem);
+  --step-7: clamp(4.0311rem, 3.3879rem + 2.8583vw, 5.9605rem);
 }
-:root[data-theme="dark"],
-.dark {
-  --background-color: #121212;
-  --text-color: #f1f5f9;
-  --text-muted: #a1a1aa;
 
-  --primary-color: #727171;
-  --secondary-color: #e2e8f0;
+/* ===== Light theme ===== */
+:root,
+:root[data-theme="light"] {
+  /* core */
+  --bg: var(--white);
+  --surface: var(--tea);
+  --card: var(--cambridge);
+  --text: var(--gunmetal);
+  --muted-text: #334247; /* gunmetal ~20% lighter */
+  --border: #d7e6d7;
 
-  --border-color: #2a2a2a;
-  --border-color-strong: #3f3f46;
+  /* interactive */
+  --link: var(--cerulean);
+  --link-hover: var(--verdigris);
+  --btn-bg: var(--gunmetal);
+  --btn-text: var(--white);
+  --btn-hover-bg: var(--cerulean);
+}
 
-  --link-color: #60a5fa;
-  --link-hover-color: #93c5fd;
+/* ===== Dark theme ===== */
+:root[data-theme="dark"] {
+  --bg: var(--gunmetal);
+  --surface: #2a4a53; /* gunmetal +10% lightness */
+  --card: #355e69; /* between gunmetal/cerulean */
+  --text: var(--tea);
+  --muted-text: #b6c9bb;
+  --border: var(--cerulean);
+  /* interactive */
+  --link: var(--cambridge);
+  --link-hover: var(--verdigris);
+  --btn-bg: var(--cambridge);
+  --btn-text: var(--gunmetal);
+  --btn-hover-bg: var(--verdigris);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: ease all 0.5s;
+}
+a {
+  color: var(--link);
+}
+a:hover {
+  color: var(--link-hover);
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+.button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+}
+.button:hover {
+  background: var(--btn-hover-bg);
+}
+
+/* Subtle, non-boring section background */
+.section-soft {
+  /* gentle gradient from tea -> cambridge, works in both themes */
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      color-mix(in srgb, var(--surface) 85%, var(--bg)) 0%,
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 88%, var(--bg)),
+      var(--bg)
+    );
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-Color 0.5s;
-}
-
-a,
-a:visited {
-  color: var(--link-color);
-}
-a:hover {
-  color: var(--link-hover-color);
 }

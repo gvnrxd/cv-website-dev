@@ -9,10 +9,12 @@ import styles from "./index.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <h1>Company Name</h1>
-      <p>NAV BAR</p>
-      <LightDarkToggle />
-      <nav>
+      <nav className={styles.navBar}>
+        <NavLink to="/" end className={styles.logoLink}>
+          <h1>Company Name</h1>
+        </NavLink>
+        <LightDarkToggle />
+
         <NavLink to="/" end>
           Home
         </NavLink>

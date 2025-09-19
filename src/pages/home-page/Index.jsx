@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <h1>Hone Page</h1>
+      <h1>Home Page</h1>
     </>
   );
 }

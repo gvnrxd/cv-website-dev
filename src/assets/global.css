@@ -25,6 +25,8 @@
   --space-2xl: clamp(3rem, 2.5rem + 1vw, 3.5rem); /* 48px → 56px */
 
   /* text scale */
+  --step--4: clamp(0.6173rem, 0.6123rem + 0.0278vw, 0.6321rem);
+  --step--3: clamp(0.6945rem, 0.6889rem + 0.0278vw, 0.7111rem);
   --step--2: clamp(0.7813rem, 0.775rem + 0.0278vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9167rem + 0.0926vw, 1rem);
   --step-0: clamp(1.125rem, 1.0833rem + 0.1852vw, 1.25rem);

@@ -1,0 +1,139 @@
+.heroSection {
+  position: relative;
+  isolation: isolate;
+  background: url(/public/img/hero/mobile-hero-768w.jpg) center / cover
+    no-repeat;
+  min-block-size: 85dvh;
+  color: var(--text);
+  display: grid;
+  align-items: center;
+
+  font-size: var(--step--2);
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.65)
+  );
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  max-width: 75%;
+  padding: var(--space-md);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.65)
+  );
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.body {
+  margin-block: auto;
+  font-size: var(--step--1);
+  line-height: 0.5;
+}
+.body h1 {
+  font-size: var(--step-7);
+  font-family: "Brush Script MT";
+  line-height: 1.1;
+}
+
+.heroBio {
+  font-size: var(--step--2) !important;
+}
+.body span {
+  font-size: var(--step--4);
+  line-height: 1.5;
+}
+
+.btnContainer {
+  padding: var(--space-xxs) var(--space-md) !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: stretch;
+  margin: 0;
+  min-width: fit-content;
+}
+.btnContainer button {
+  font-size: var(--step--1);
+  line-height: 1.1;
+}
+.btnContainer span {
+  font-size: var(--step--4);
+  text-wrap: nowrap;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.btnGrad {
+  background-image: linear-gradient(
+    to right,
+    #093028 0%,
+    #237a57 51%,
+    #093028 100%
+  );
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  padding: var(--space-xxs);
+}
+.btnGrad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.emailBtn {
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #434343 51%,
+    #000000 100%
+  );
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  padding: var(--space-xxs);
+}
+.emailBtn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.body ul {
+  padding-top: var(--space-xs);
+  display: flex;
+  list-style: none;
+  gap: var(--space-xxs);
+  font-size: var(--step--4);
+  justify-content: center;
+}
+
+.body li:not(:last-child)::after {
+  content: "●";
+  margin-left: var(--space-xxs);
+}
+.spanContainer {
+  line-height: 0.1 !important;
+  word-break: normal;
+  text-wrap: wrap;
+}

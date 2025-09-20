@@ -8,9 +8,13 @@ import LightDarkToggle from "@shared/components/common/light-dark-toggle/Index";
 import switchTheme from "../common/light-dark-toggle/hooks/switchTheme";
 
 import styles from "./index.module.css";
-import MenuIcon from "@/assets/icons/menuIcon.jsx";
+import MenuIcon from "@/assets/icons/MenuIcon.jsx";
+import LightModeIcon from "@/assets/icons/LightModeIcon.jsx";
+import DarkModeIcon from "@/assets/icons/DarkModeIcon.jsx";
+/* 
 import LightModeIcon from "@/assets/icons/lightModeIcon";
 import DarkModeIcon from "@/assets/icons/DarkModeIcon";
+*/
 
 export default function Header() {
   const { theme, toggleTheme } = switchTheme();

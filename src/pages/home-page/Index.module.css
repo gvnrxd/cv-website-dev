@@ -4,7 +4,7 @@
   background: url(/public/img/hero/mobile-hero-768w.jpg) center / cover
     no-repeat;
   min-block-size: 90dvh;
-  color: var(--text);
+  color: var(--tea-green);
   display: grid;
   align-items: center;
 
@@ -146,8 +146,9 @@
 .waveTop {
   line-height: 0;
   height: var(--space-2xl);
-  background: transparent;
+
   position: relative;
+  margin-top: -15px;
 }
 .waveTop svg {
   width: 100%;
@@ -155,11 +156,7 @@
 }
 
 .mainContent {
-  background-color: var(--bg);
   text-align: center;
-}
-.downArrow {
-  margin-bottom: var(--space-xxs);
 }
 
 .mainText h2 {
@@ -167,4 +164,11 @@
   margin: var(--space-md) 0;
   font-size: var(--step-4);
   font-weight: 900;
+}
+.mainText h3 {
+  font-family: "Great Vibes", cursive !important;
+  font-size: var(--step-2);
+}
+.mainText {
+  padding: 0 var(--space-md);
 }

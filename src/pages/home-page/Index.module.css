@@ -3,7 +3,7 @@
   isolation: isolate;
   background: url(/public/img/hero/mobile-hero-768w.jpg) center / cover
     no-repeat;
-  min-block-size: 85dvh;
+  min-block-size: 90dvh;
   color: var(--text);
   display: grid;
   align-items: center;
@@ -40,38 +40,45 @@
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 }
 
+.kicker {
+  display: flex;
+  align-items: center;
+}
 .body {
   margin-block: auto;
   font-size: var(--step--1);
-  line-height: 0.5;
+  display: grid;
 }
 .body h1 {
   font-size: var(--step-7);
-  font-family: "Brush Script MT";
-  line-height: 1.1;
+  font-family: "Great Vibes";
+  font-weight: bolder;
+  line-height: 1;
+  text-wrap: balance;
+  text-align: center;
+  margin-bottom: var(--space-xs);
 }
 
 .heroBio {
-  font-size: var(--step--2) !important;
+  font-size: var(--step--3) !important;
 }
 .body span {
   font-size: var(--step--4);
-  line-height: 1.5;
 }
 
 .btnContainer {
   padding: var(--space-xxs) var(--space-md) !important;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--space-xxs);
   justify-content: center;
-  align-items: stretch;
   margin: 0;
   min-width: fit-content;
 }
 .btnContainer button {
   font-size: var(--step--1);
-  line-height: 1.1;
+  border-radius: var(--radius-full);
 }
 .btnContainer span {
   font-size: var(--step--4);
@@ -91,8 +98,8 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  border-radius: 10px;
-  padding: var(--space-xxs);
+  padding: var(--space-xxs) 0;
+  line-height: 0.8;
 }
 .btnGrad:hover {
   background-position: right center; /* change the direction of the change here */
@@ -110,9 +117,7 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  border-radius: 10px;
   display: block;
-  padding: var(--space-xxs);
 }
 .emailBtn:hover {
   background-position: right center; /* change the direction of the change here */
@@ -126,6 +131,7 @@
   gap: var(--space-xxs);
   font-size: var(--step--4);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .body li:not(:last-child)::after {
@@ -133,7 +139,32 @@
   margin-left: var(--space-xxs);
 }
 .spanContainer {
-  line-height: 0.1 !important;
-  word-break: normal;
-  text-wrap: wrap;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.waveTop {
+  line-height: 0;
+  height: var(--space-2xl);
+  background: transparent;
+  position: relative;
+}
+.waveTop svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mainContent {
+  background-color: var(--bg);
+  text-align: center;
+}
+.downArrow {
+  margin-bottom: var(--space-xxs);
+}
+
+.mainText h2 {
+  font-family: "Great Vibes", cursive !important;
+  margin: var(--space-md) 0;
+  font-size: var(--step-4);
+  font-weight: 900;
 }

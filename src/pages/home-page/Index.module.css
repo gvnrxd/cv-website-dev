@@ -53,14 +53,14 @@
   font-size: var(--step-7);
   font-family: "Great Vibes";
   font-weight: bolder;
-  line-height: 1;
+  line-height: 0.7;
   text-wrap: balance;
   text-align: center;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-lg);
 }
 
 .heroBio {
-  font-size: var(--step--3) !important;
+  font-size: var(--step--1) !important;
 }
 .body span {
   font-size: var(--step--4);
@@ -73,12 +73,15 @@
   grid-template-rows: repeat(2, 1fr);
   gap: var(--space-xxs);
   justify-content: center;
-  margin: 0;
+  margin-top: -10px;
   min-width: fit-content;
 }
 .btnContainer button {
+  font-family: "Courier New", Courier, monospace;
   font-size: var(--step--1);
   border-radius: var(--radius-full);
+  width: 65%;
+  margin: 0 auto;
 }
 .btnContainer span {
   font-size: var(--step--4);
@@ -129,7 +132,7 @@
   display: flex;
   list-style: none;
   gap: var(--space-xxs);
-  font-size: var(--step--4);
+  font-size: var(--step--3);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -180,9 +183,14 @@
   display: grid;
   gap: var(--space-xs);
 }
-.dividerText h2 {
+.dividerText h3 {
   font-family: "Great Vibes", cursive;
-  font-size: var(--step-5);
+  font-size: var(--step-6);
+}
+.dividerText p {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
 }
 .dividerText button {
   color: var(--white);
@@ -225,7 +233,7 @@
 .aboutMeHeader {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: var(--space-xxs);
 }
 
 .headshotWrap {
@@ -234,7 +242,7 @@
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 6px solid var(--border);
+  border: 2px solid var(--border);
 }
 
 .headshot {
@@ -245,19 +253,18 @@
   transform-origin: center;
 }
 
-/* optional */
 .intro {
   line-height: 1.6;
   text-align: left;
-}
-
-.textBlock {
-  padding-top: var(--space-sm);
-  text-align: left;
+  text-wrap: balance;
 }
 
 .textBlock p {
   margin-bottom: var(--space-lg);
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding-top: var(--space-sm);
+  text-align: left;
 }
 
 .textBlock ul {
@@ -295,4 +302,10 @@
   right: 50%;
   margin: 0 -50vw 0 -50vw;
   position: relative;
+}
+
+.clientBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
 }

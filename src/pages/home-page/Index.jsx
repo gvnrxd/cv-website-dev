@@ -2,8 +2,8 @@ import styles from "./Index.module.css";
 import Header from "@shared/components/header/Index";
 import SelfImprovementIcon from "@/assets/icons/SelfImprovementIcon.jsx";
 import DownArrow from "@/assets/icons/DownArrow.jsx";
-
-import Headshot from "/public/img/shared/test.jpg";
+import headShot from "@/assets/img/test.jpg";
+import ClientCard from "@shared/components/common/client-card/Index.jsx";
 
 export default function HomePage() {
   return (
@@ -60,7 +60,7 @@ export default function HomePage() {
           </svg>
         </div>
         <div className={styles.dividerText}>
-          <h2>Grow Yourself</h2>
+          <h3>Grow Yourself</h3>
           <p>Reach your full potential with our expert consulting services.</p>
           <button>Get Started</button>
         </div>
@@ -73,18 +73,20 @@ export default function HomePage() {
           </svg>
         </div>
         <div className={styles.mainText}>
-          <h3>About Me</h3>
-
           <div className={styles.aboutMe}>
+            <h2>About Me</h2>
             <div className={styles.aboutMeHeader}>
               <div className={styles.headshotWrap}>
                 <img
-                  src={Headshot}
+                  src={headShot}
                   alt="Headshot"
                   className={styles.headshot}
                 />
               </div>
-              <p className={styles.intro}>Lorem ipsum…</p>
+              <p className={styles.intro}>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Distinctio, non.
+              </p>
             </div>
 
             <div className={styles.textBlock}>
@@ -102,22 +104,28 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <span>Still Not Sure?</span>
+          <p className={styles.notSure}>Still Not Sure?</p>
           <div>
             <h2>What My Clients Say</h2>
-            <div>
-              <div>
-                <p>IMG</p>
-              </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laborum, vel consequuntur. Quibusdam itaque natus veniam quasi
-                  aperiam fuga labore necessitatibus.
-                </p>
-                <p>J.Patel</p>
-                <span>Student</span>
-              </div>
+            <div className={styles.clientBox}>
+              <ClientCard
+                img="img"
+                desc="Lorem ipsum dolor sit amet."
+                name="J.Patel"
+                occupation="Student"
+              />
+              <ClientCard
+                img="img"
+                desc="Lorem ipsum dolor sit amet."
+                name="J.Patel"
+                occupation="Student"
+              />
+              <ClientCard
+                img="img"
+                desc="Lorem ipsum dolor sit amet."
+                name="J.Patel"
+                occupation="Student"
+              />
             </div>
           </div>
           <p className={styles.question}>Got questions?</p>

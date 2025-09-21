@@ -59,42 +59,48 @@ export default function HomePage() {
             />
           </svg>
         </div>
+        <div className={styles.dividerText}>
+          <h2>Grow Yourself</h2>
+          <p>Reach your full potential with our expert consulting services.</p>
+          <button>Get Started</button>
+        </div>
+        <div className={styles.waveFull}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
+            <path
+              fill="var(--bg) "
+              d="M0,80 C240,140 480,20 720,60 C960,100 1200,40 1440,80 L1440,0 L0,0 Z"
+            />
+          </svg>
+        </div>
         <div className={styles.mainText}>
-          <div>
-            <h2>Grow Yourself</h2>
-            <p>
-              Reach your full potential with our expert consulting services.
-            </p>
-            <button>Get started</button>
-          </div>
-          <div>
-            <div>
-              <div>
-                <h3>About Me</h3>
+          <h3>About Me</h3>
+
+          <div className={styles.aboutMe}>
+            <div className={styles.aboutMeHeader}>
+              <div className={styles.headshotWrap}>
                 <img
                   src={Headshot}
-                  style={{
-                    borderRadius: "50%",
-                    height: "200px",
-                    width: "200px",
-                  }}
+                  alt="Headshot"
+                  className={styles.headshot}
                 />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Tempore, officiis! Quo maiores repellat, inventore error
-                  reiciendis explicabo alias, a iste excepturi architecto
-                  molestias soluta voluptates aspernatur nam nesciunt. Quas,
-                  possimus!
-                </p>
-                <ul>
-                  <li>200+ coached</li>
-                  <li>5 years</li>
-                  <li>FAU News</li>
-                </ul>
               </div>
+              <p className={styles.intro}>Lorem ipsum…</p>
             </div>
-            <p>Got questions?</p>
-            <h2>Frequently Asked Questions</h2>
+
+            <div className={styles.textBlock}>
+              <p>
+                Tempore, officiis! Quo maiores repellat, inventore error
+                reiciendis explicabo alias, a iste excepturi architecto
+                molestias soluta voluptates aspernatur nam nesciunt.
+              </p>
+
+              <span>Quas, possimus!</span>
+              <ul>
+                <li>200+ coached</li>
+                <li>5 years</li>
+                <li>FAU News</li>
+              </ul>
+            </div>
           </div>
           <span>Still Not Sure?</span>
           <div>
@@ -113,6 +119,18 @@ export default function HomePage() {
                 <span>Student</span>
               </div>
             </div>
+          </div>
+          <p className={styles.question}>Got questions?</p>
+          <div className={styles.fAQ}>
+            <div className={styles.waveFooter}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
+                <path
+                  fill="var(--surface)"
+                  d="M0,80 C240,140 480,20 720,60 C960,100 1200,40 1440,80 L1440,0 L0,0 Z"
+                />
+              </svg>
+            </div>
+            <h2>Frequently Asked Questions</h2>
           </div>
         </div>
       </section>

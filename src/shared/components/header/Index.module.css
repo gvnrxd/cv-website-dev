@@ -49,10 +49,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   margin: var(--space-xxs);
+  z-index: 2;
 }
 
 .mobileThemeToggle svg:last-of-type {

@@ -1,9 +1,30 @@
 import styles from "./Index.module.css";
-import Header from "@shared/components/header/Index";
 import SelfImprovementIcon from "@/assets/icons/SelfImprovementIcon.jsx";
 import DownArrow from "@/assets/icons/DownArrow.jsx";
 import headShot from "@/assets/img/test.jpg";
 import ClientCard from "@shared/components/common/client-card/Index.jsx";
+import customer1 from "@/assets/img/customer1.jpg";
+import cusomter2 from "@/assets/img/cusomter2.jpg";
+import cusomter3 from "@/assets/img/cusomter3.jpg";
+import { useState } from "react";
+
+function Collapsible({ title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className={styles.collapsibleWrap}>
+      <button
+        className={`${styles.collapsible} ${isOpen ? styles.active : ""}`}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((v) => !v)}
+      >
+        {title}
+      </button>
+      <div className={styles.content} hidden={!isOpen}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -54,7 +75,7 @@ export default function HomePage() {
           <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
             <path
               d="M0,80 C240,140 480,20 720,60 C960,100 1200,40 1440,80 L1440,0 L0,0 Z"
-              fill="var(--surface) "
+              fill="var(--surface)"
               z-index="-1"
             />
           </svg>
@@ -67,7 +88,7 @@ export default function HomePage() {
         <div className={styles.waveFull}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
             <path
-              fill="var(--bg) "
+              fill="var(--bg)"
               d="M0,80 C240,140 480,20 720,60 C960,100 1200,40 1440,80 L1440,0 L0,0 Z"
             />
           </svg>
@@ -104,31 +125,35 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <p className={styles.notSure}>Still Not Sure?</p>
           <div>
-            <h2>What My Clients Say</h2>
+            <h2>What People Say</h2>
             <div className={styles.clientBox}>
               <ClientCard
-                img="img"
+                img={cusomter2}
                 desc="Lorem ipsum dolor sit amet."
                 name="J.Patel"
                 occupation="Student"
               />
               <ClientCard
-                img="img"
+                img={customer1}
                 desc="Lorem ipsum dolor sit amet."
                 name="J.Patel"
                 occupation="Student"
               />
               <ClientCard
-                img="img"
+                img={cusomter3}
+                desc="Lorem ipsum dolor sit amet."
+                name="J.Patel"
+                occupation="Student"
+              />
+              <ClientCard
+                img={cusomter3}
                 desc="Lorem ipsum dolor sit amet."
                 name="J.Patel"
                 occupation="Student"
               />
             </div>
           </div>
-          <p className={styles.question}>Got questions?</p>
           <div className={styles.fAQ}>
             <div className={styles.waveFooter}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
@@ -138,7 +163,71 @@ export default function HomePage() {
                 />
               </svg>
             </div>
-            <h2>Frequently Asked Questions</h2>
+            <div className={styles.fAQContent}>
+              <h2>Frequently Asked Questions</h2>
+              <div className={styles.collapsibleContainer}>
+                <Collapsible title="What can I expect in the first consultation?">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="Who do you usually work with?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="Do you offer virtual sessions?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="What is your approach to consulting?  ">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="How do you ensure confidentiality?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="What are your fees and payment options?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+
+                <Collapsible title="How can I prepare for my first session?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem voluptatem soluta asperiores quisquam alias fugit hic
+                    omnis explicabo, aliquid cum.
+                  </p>
+                </Collapsible>
+              </div>
+            </div>
+
+            <div className={styles.fAQFooter}>
+              <p>Have more questions?</p>
+              <button className={styles.contactButton}>Contact Me</button>
+            </div>
           </div>
         </div>
       </section>

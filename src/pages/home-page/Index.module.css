@@ -360,7 +360,7 @@
 .contactButton {
   background-color: #237a57;
   color: var(--white);
-  padding: var(--space-md) var(--space-xs);
+  padding: var(--space-xxs) var(--space-xs);
   border-radius: var(--radius-full);
   width: 40%;
   margin: var(--space-md) auto 0 auto;
@@ -393,4 +393,8 @@
 
 .collapsibleWrap button {
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--step--1);
 }
